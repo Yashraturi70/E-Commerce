@@ -7,10 +7,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h1>{{ product.name }}</h1>
-    <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
-    <p>Price: ${{ product.price }}</p>
-    <a href="{{ url_for('add_to_cart', product_id=product.id) }}">Add to Cart</a>
-    <a href="{{ url_for('home') }}">Back to Home</a>
+
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('cart') }}">View Cart</a>
+    </nav>
+
+    <div class="product-details">
+        <h1>{{ product.name }}</h1>
+        <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+        <p>Price: ${{ product.price }}</p>
+        <a href="{{ url_for('add_to_cart', product_id=product.id) }}">Add to Cart</a>
+        <a href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+
+    <footer>
+        <p>© 2024 My E-commerce Site</p>
+    </footer>
+
 </body>
 </html>
